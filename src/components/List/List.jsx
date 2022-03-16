@@ -17,14 +17,17 @@ import {
 import useStyles from './styles';
 import PlaceDetails from '../PlaceDetails/PlaceDetails';
 
-const List = ({ places, childClicked, isLoading }) => {
-  const [type, setType] = useState('restaurants');
-  const [rating, setRating] = useState(0);
+const List = ({
+  places,
+  childClicked,
+  isLoading,
+  type,
+  setType,
+  rating,
+  setRating,
+}) => {
   const classes = useStyles();
-
   const [elRefs, setElRefs] = useState([]);
-
-  console.log({ childClicked });
 
   useEffect(() => {
     setElRefs((refs) =>

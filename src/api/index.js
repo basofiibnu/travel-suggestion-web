@@ -1,9 +1,7 @@
 import axios from 'axios';
 
-const URL =
-  'https://travel-advisor.p.rapidapi.com/restaurants/list-in-boundary';
-
-export const getPlacesData = async (ne, sw) => {
+export const getPlacesData = async (type, ne, sw) => {
+  const URL = `https://travel-advisor.p.rapidapi.com/${type}/list-in-boundary`;
   try {
     const {
       data: { data },
