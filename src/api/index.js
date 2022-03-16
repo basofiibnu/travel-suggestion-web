@@ -3,7 +3,7 @@ import axios from 'axios';
 const URL =
   'https://travel-advisor.p.rapidapi.com/restaurants/list-in-boundary';
 
-export const getPlacesData = async (sw, ne) => {
+export const getPlacesData = async (ne, sw) => {
   try {
     const {
       data: { data },

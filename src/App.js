@@ -8,7 +8,7 @@ import { getPlacesData } from './api';
 const App = () => {
   const [places, setPlaces] = useState([]);
   const [coordinates, setCoordinates] = useState({});
-  const [bounds, setBounds] = useState(null);
+  const [bounds, setBounds] = useState({});
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(
@@ -19,16 +19,7 @@ const App = () => {
   }, []);
 
   useEffect(() => {
-    let boundsOption = [];
-    if (!bounds) {
-      boundsOption = {
-        ne: { lat: -7.8703255712242, lng: 112.57165438536379 },
-        sw: { lat: -7.918870402933706, lng: 112.52419001463625 },
-      };
-    } else {
-      boundsOption = bounds;
-    }
-    getPlacesData(boundsOption.ne, boundsOption.sw).then((data) => {
+    getPlacesData(bounds.ne, bounds.sw).then((data) => {
       setPlaces(data);
     });
   }, [coordinates, bounds]);
