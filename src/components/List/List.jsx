@@ -43,7 +43,7 @@ const List = ({
         Restaurants, Hotels & Attractions around you
       </Typography>
       {isLoading ? (
-        <div className={classes.isLoading}>
+        <div className={classes.loading}>
           <CircularProgress size="5rem" />
         </div>
       ) : (
